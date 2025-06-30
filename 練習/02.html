@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 48;
+
+        if (a < 0) {
+            console.log('數字錯誤');
+        } else if (a >= 1 && a <= 10) {
+            console.log(`用水度數:${a}
+            每度為:7.35元
+            實付水費為:${a * 7.35}元`);
+        } else if (a >= 11 && a <= 30) {
+            console.log(`用水度數:${a}
+            每度為:9.45元
+            實付水費為:${a * 9.45}元`);
+        } else if (a >= 31 && a <= 50) {
+            console.log(`用水度數:${a}
+            每度為:11.55元
+            實付水費為:${a * 11.55}元`);
+        } else if (a < 50) {
+            console.log(`用水度數:${a}
+            每度為:12.075元
+            實付水費為:${a * 12.075}元`);
+        }
+
+
+    </script>
+</body>
+
+</html>
