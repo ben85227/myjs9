@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>for迴圈</h1>
+    <script>
+        // for(參數1;參數2;參數3)
+        // 參數1:建立迴圈變數,並設立初始值
+        // 參數2:執行迴圈條件
+        // 參數3:迴圈變數的增減值
+        // i=i+1 => i++ (一樣的)
+        for (var i = 1; i <= 5; i++) {
+            document.write('Hi<br>');
+        }
+        document.write('<br>');
+
+
+        for (var i = 1; i <= 5; i++) {
+            document.write(i + '<br>')
+
+        }
+
+
+
+        for(var i=1;i<=10;i++){
+            if(i%2==1){
+                document.write(i+',');
+            }
+        }
+        document.write('<hr>')
+
+        // i+=2 => i=i+2
+        for(var i=1;i<=10;i+=2){
+        document.write(i+',');
+        }
+
+    </script>
+</body>
+
+</html>
