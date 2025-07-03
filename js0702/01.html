@@ -28,17 +28,121 @@
 
 
 
-        for(var i=1;i<=10;i++){
-            if(i%2==1){
-                document.write(i+',');
+        for (var i = 1; i <= 10; i++) {
+            if (i % 2 == 1) {
+                document.write(i + ',');
             }
         }
         document.write('<hr>')
 
         // i+=2 => i=i+2
-        for(var i=1;i<=10;i+=2){
-        document.write(i+',');
+        for (var i = 1; i <= 10; i += 2) {
+            document.write(i + ',');
         }
+        document.write('<hr>')
+
+
+
+        // 1-10的合計
+        // 累計 => s=s+i
+        // s=0
+        // i=1 => s=s+i =>s=0+1=1
+        // i=2 => s=1+2=3
+        // i=3 => s=3+3=6
+        var s = 0
+        for (var i = 1; i <= 10; i++) {
+            s = s + i;
+        }
+        document.write('1+2+3+...+10=' + s);
+        document.write('<hr>');
+
+        // 1-100奇數和
+        s = 0;
+        for (var i = 1; i <= 100; i += 2) {
+            s = s + i;
+        }
+        document.write('1-100奇數和=' + s);
+        document.write('<br>');
+
+        s = 0
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                s = s + i;
+            }
+        }
+        document.write('1-100奇數和=' + s + '<hr>');
+
+
+        // 100-1偶數和
+        s = 0;
+        for (var i = 100; i >= 0; i -= 2) {
+            s = s + i;
+        }
+        document.write('100-1偶數和=' + s);
+        document.write('<br>');
+
+        s = 0;
+        for (var i = 100; i >= 0; i--) {
+            if (i % 2 == 0) {
+                s = s + i;
+            };
+        }
+        document.write('100-1偶數和=' + s);
+        document.write('<hr>');
+
+        // 1-100之間3的倍數同時也是5的倍數和與列出數字
+        var end = 0;
+        for (var i = 100; i >= 1; i--) {
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    end = i
+                    break;
+                }
+            }
+        }
+
+
+        s = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                s = s + i;
+                 if (i == end) {
+                        document.write(i + '=');
+                    } else {
+                        document.write(i + '+');
+                    }
+            };
+        }
+        document.write(s + '<hr>');
+
+
+        var end = 0;
+        for (var i = 100; i >= 1; i--) {
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    end = i
+                    break;
+                }
+            }
+        }
+
+        var s = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    s = s + i
+                    if (i == end) {
+                        document.write(i + '=');
+                    } else {
+                        document.write(i + '+');
+                    }
+                }
+            }
+        }
+        document.write(s + '<br>');
+
+
+
 
     </script>
 </body>
