@@ -15,25 +15,37 @@
         var all = 0
         var pass = 0
         var failed = 0
+        var avg=0
 
         do {
             var score = prompt('請輸入成績');
+            // 檢查是否取消
             if(score==null){
                 alert('取消,即將結束');
                 break;
-            }else if(score.trim()==""){
+            }
+            // 檢查是否空白
+            // 去除資料前後的空白
+            if(score.trim()==""){
                 alert('不可空白!請重新輸入');
                 continue;
-            }else if (score == -1) {
+            }
+
+            // 有資料
+            // 檢查是否結束
+            if (score == -1) {
                 alert('成績輸入結束')
                 break;
-            }
+            } 
+            // 字串轉數字
             score=Number(score);
-            if (score > 100 || score < 0) {
-                alert('非成績範圍,請重新輸入');
+
+            // 檢查是否為數字
+            if(isNaN(score)){
+                alert('非數字!請重新輸入')
                 continue;
-            } else if (isNaN(Number(score))) {
-                alert('非數值,請重新輸入');
+            }else if (score > 100 || score < 0) {
+                alert('非成績範圍,請重新輸入');
                 continue;
             } else if (score >= 60) {
                 all = all + Number(score)
@@ -44,15 +56,23 @@
                 failed++
                 continue;
             }
-
+           
         } while (1);
+        
+        avg=all/(pass+failed);
 
-         var result=document.getElementById('result');
-        result.innerHTML=`
+
+    var result=document.getElementById('result');
+    result.innerHTML=`
           及格:${pass}人<br>
         不及格:${failed}人<br>
           總分:${all}分<br>
-          平均:${(all/(pass+failed)).toFixed(1)}分<br>`
+          平均:${avg}分<br>`
+
+        // document.write('及格人數=>' + pass + '<br>');
+        // document.write('不及格人數=>' + failed + '<br>');
+        // document.write('全班總分=>' + all + '<br>');
+        // document.write('全班平均=>' + (all / (pass + failed)).toFixed(1));
 
     </script>
 </body>
