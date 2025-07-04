@@ -12,21 +12,21 @@
     <p id="result">結果</p>
 
     <script>
-        var all = 0
-        var pass = 0
-        var failed = 0
-        var avg=0
+        var all = 0;
+        var pass = 0;
+        var failed = 0;
+        var avg = 0;
 
         do {
             var score = prompt('請輸入成績');
             // 檢查是否取消
-            if(score==null){
+            if (score == null) {
                 alert('取消,即將結束');
                 break;
             }
             // 檢查是否空白
             // 去除資料前後的空白
-            if(score.trim()==""){
+            if (score.trim() == "") {
                 alert('不可空白!請重新輸入');
                 continue;
             }
@@ -36,34 +36,36 @@
             if (score == -1) {
                 alert('成績輸入結束')
                 break;
-            } 
+            }
             // 字串轉數字
-            score=Number(score);
+            score = Number(score);
 
             // 檢查是否為數字
-            if(isNaN(score)){
+            if (isNaN(score)) {
                 alert('非數字!請重新輸入')
                 continue;
-            }else if (score > 100 || score < 0) {
+            } else if (score > 100 || score < 0) {
                 alert('非成績範圍,請重新輸入');
                 continue;
-            } else if (score >= 60) {
-                all = all + Number(score)
-                pass++
-                continue;
-            } else if (score < 60) {
-                all = all + Number(score)
-                failed++
-                continue;
             }
-           
+
+            if (score >= 60) {
+                pass++;
+                // continue;
+            } else  {
+
+                failed++;
+                // continue;
+            }
+            all = all + score;
+            avg = all / (pass + failed);
         } while (1);
-        
-        avg=all/(pass+failed);
 
 
-    var result=document.getElementById('result');
-    result.innerHTML=`
+
+
+        var result = document.getElementById('result');
+        result.innerHTML = `
           及格:${pass}人<br>
         不及格:${failed}人<br>
           總分:${all}分<br>
