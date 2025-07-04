@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var rd = Math.floor(Math.random() * 100) + 1;
+        console.log(rd);
+
+        do {
+            var a = prompt('終極密碼~~1到100請輸入數字');
+            if (a == null) {
+                alert('取消,即將結束');
+                break;
+            }
+            if (a.trim() == "") {
+                alert('猜阿笨蛋!空在那在幹嘛');
+                continue;
+            }
+            if (a == rd) {
+                alert(`第次就猜到了!太強了吧`);
+                break;
+            }
+            if (isNaN(a)) {
+                alert('非數字!請重新輸入')
+            }
+
+        } while (1);
+
+
+    </script>
+</body>
+
+</html>
