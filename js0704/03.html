@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var s=0;
+        // var a=1;
+        // while(a<=5){
+        //     s=s+a;
+        //     a++;
+        // }
+        // document.write(`1+2+3+4+5=${s}`);
+
+
+        // var s2=0;
+        // var b=0;
+        // do{
+        //     s2=s2+b;
+        //     b++;
+        // }while(b<=5);
+        // document.write(`1+2+3+4+5=${s2}`);
+
+
+        do {
+            var month = prompt('請輸入月份');
+            // alert(month);
+            // 按了取消,回傳null,所以結束迴圈
+            if (month == null) {
+                break;
+            } else if (month == '') {
+                alert('月份不能空白,請重新輸入');
+                continue;  //忽略以下承式敘述,回到迴圈開始的位置
+            } else if (month < 1 || month > 12) {
+                alert('月份錯誤,請重新輸入');
+                continue;
+            } else if (isNaN(Number(month))) {
+                // Number(值)=>
+                // 落式數字 =>回傳數字
+                // 落是非數字 =>回傳NaN
+                // 檢查NaN =>isNaN(值) =>值是不是NaN
+                alert('非數值,請重新輸入');
+                continue;
+            }
+
+
+            alert('輸入的月份為:' + month);
+        } while (1);
+    </script>
+</body>
+
+</html>
