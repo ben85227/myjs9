@@ -10,10 +10,14 @@
 <body>
     <script>
         var rd = Math.floor(Math.random() * 100) + 1;
+        var fre = 1;
+        var max = 100;
+        var min = 1;
         console.log(rd);
 
         do {
             var a = prompt('終極密碼~~1到100請輸入數字');
+
             if (a == null) {
                 alert('取消,即將結束');
                 break;
@@ -22,13 +26,44 @@
                 alert('猜阿笨蛋!空在那在幹嘛');
                 continue;
             }
+            if (isNaN(a)) {
+                alert('非數字!請重新輸入');
+                continue;
+            }
+            if (a <= min || a >= max) {
+                alert(`超出範圍了啦！沒玩過終極密碼逆!輸入 ${min} 到 ${max} 中的數字啦`);
+                continue;
+            }
+            if (a < rd) {
+                alert(`太小囉~~${a}~${max}`);
+                document.write(`第${fre}次:${a}=> 太小(提示:${a}~${max})<br>`)
+                fre++;
+                min = Number(a);
+                continue;
+            }
+
+            if (a > rd) {
+                alert(`太大囉~~${min}~${a}`);
+                document.write(`第${fre}次:${a}=> 太大(提示:${min}~${a})<br>`)
+                fre++;
+                max = Number(a);
+                continue;
+            }
             if (a == rd) {
-                alert(`第次就猜到了!太強了吧`);
+                if(fre<=8){
+                    alert(`第${fre}次就猜到了!太強了吧`);
+                }else if(fre>8&&fre<=15){
+                    alert(`第${fre}次猜到了!不怎麼樣`);
+                }else{
+                    alert(`第${fre}次才猜到了!太廢了吧`);
+                }
+                
+                document.write(`第${fre}次:${a}=> 猜對囉)`)
                 break;
             }
-            if (isNaN(a)) {
-                alert('非數字!請重新輸入')
-            }
+
+
+
 
         } while (1);
 
