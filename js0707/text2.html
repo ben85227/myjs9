@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [5, 60, 3, 90, 33, 1, 100];
+        let max = 0;
+        let min = 999;
+
+        for(i=0;i<arr1.length;i++){
+            if(arr1[i]>max){
+                max=arr1[i];
+            }
+            if(arr1[i]<min){
+                min=arr1[i];
+            }
+        }
+        console.log(max);
+        console.log(min);
+
+        max = 0;
+        min = 999;
+        for (let i of arr1) {
+            if (i > max) {
+                max = i;
+            }
+            if (i < min) {
+                min = i;
+            }
+
+        }
+        console.log(max);
+        console.log(min);
+
+
+
+        max = 0;
+        min = 999;
+        arr1.forEach((i) => {
+            if (i > max) {
+                max = i;
+            }
+            if (i < min) {
+                min = i;
+            }
+
+        })
+        console.log(max);
+        console.log(min);
+
+
+    </script>
+</body>
+
+</html>

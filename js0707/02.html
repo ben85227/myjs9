@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>陣列</h2>
+    <script>
+        //建立一個陣列,放任意5個值
+        let arr1=[31,200,3,9,2];
+        console.log('排序前:'+arr1);
+        //排序
+        arr1.sort((a,b)=>{  
+            //遞增排序 a-b <=這是a到b 不是減
+            return a-b
+        });
+        console.log('排序後'+arr1);
+
+        arr1.sort((a,b)=>{  
+            //遞檢排序 b-a <=這是b到a 不是減
+            return b-a
+        });
+        console.log('排序後'+arr1);
+
+
+        //使用迴圈,顯示陣列中的內容
+        for (let i=0;i<arr1.length;i++){
+            console.log(arr1[i]);
+        }
+
+
+    </script>
+</body>
+</html>

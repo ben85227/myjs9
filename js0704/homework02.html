@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>終極密碼</h2>
+    <div id="game">
+        請輸入數字:
+        <input type="number" id="txtNu">
+        <button onclick="btnClick()">確定</button>        
+    </div>
+
+    <p id="result"></p>
+    <button id="btn2" onclick="btnReset()" style="display: none;">再玩一次</button>
+    <script>
+        let game=document.getElementById('game');
+        let result=document.getElementById('result');
+        let btn2=document.getElementById('btn2')
+        let rd=Math.floor(Math.random()*100)+1;
+        let max=100;
+        let min=1;
+        count=0;
+        let txtNu='';
+
+        console.log(rd);
+
+
+        function btnClick(){
+            count++
+           txtNu=document.getElementById('txtNu');
+           let keyNum=parseInt(txtNu.value);
+           if(isNaN(keyNum)){
+            alert('不可空白');
+            txtNu.focus();
+            return;
+           }
+
+           if(keyNum===rd){
+            result.innerHTML+=`第${count}次 中了`;
+            game.style.display='none';
+            btn2.style.display='block';
+            return;//結束funtion 不做後面的
+           }
+           if(keyNum>rd){
+            max=keyNum;
+            result.innerHTML+=`第${count}次 太大 ${min}~${max}<br>`;
+           }
+           if(keyNum<rd){
+            min=keyNum;
+            result.innerHTML+=`第${count}次 太小 ${max}~${min}<br>`;
+           }
+           txtNu.value='';
+           txtNu.focus(); 
+        }
+
+        function btnReset(){
+          txtNu.value='';
+          result.innerHTML='';
+          rd=Math.floor(Math.random()*100)+1;
+          count=0;
+          max=100;
+          min=1;
+          game.style.display='block';
+          btn2.style.display='none';
+        }
+    </script>
+</body>
+</html>
