@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=['html','css','js','figma','ui'];
+        
+        // 方法一:迴圈逐一比對
+        for(let i=0;i<arr1.length;i++){
+            if(arr1[i]=='css'){
+                alert(`css在第${i+1}位置`);
+                break;
+            }
+        }
+
+        // 方法二:indexOf(item)
+        if(arr1.indexOf('css')===-1){
+            alert('css不存在');
+        }else{
+            alert(`css在第${arr1.indexOf('css')+1}個位置`)
+        };
+
+        let searchIndex=arr1.indexOf('css');
+        if(searchIndex!==-1){
+            alert('找到');
+        }else{
+            alert('沒找到');
+        };
+
+        // includes(item)
+        let find=arr1.includes('css');
+        if(find==true){
+            console.log('找到');
+        }else{
+            console.log('沒有');
+        }
+
+        (find)?console.log('找到'):console.log('沒有')
+    </script>
+</body>
+</html>

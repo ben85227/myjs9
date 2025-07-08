@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>樂透</h2>
+    <p>
+        <button onclick="btn1Click()">威力彩</button>
+        <button onclick="btn2Click()">大樂透</button>
+        <button onclick="btn3Click()">今彩539</button>
+    </p>
+
+    <p id="before">排序前號碼</p>
+    <p id="after">排序後號碼</p>
+    <p id="two">特別號</p>
+
+
+    <script>
+
+        let before = document.getElementById('before')
+        let after = document.getElementById('after')
+        let two = document.getElementById('two')
+
+        function btn1Click() {
+            // 威力彩第一區
+            let arr1 = [];
+            var n = 0
+            do {
+                let rd = Math.floor(Math.random() * 38 + 1);
+                for (i = 0; i <= 5; i++) {
+                    if (arr1.includes(rd) == true) {
+                        continue;
+                    } else {
+                        arr1[n] = rd;
+                        n++;
+                    }
+                }
+
+            } while (n <= 5)
+
+
+            before.textContent = '排序前號碼' + arr1;
+
+            arr1.sort((a, b) => {
+                return a - b;
+            })
+            after.textContent = '排序後號碼' + arr1;
+
+            // 第二區
+            var a = Math.floor(Math.random() * 8 + 1);
+            console.log(a);
+
+            two.textContent = '特別號' + a;
+        }
+
+
+            // 大樂透
+            function btn2Click() {
+            let arr2 = [];
+            var k = 0
+            do {
+                let rd = Math.floor(Math.random() * 49 + 1);
+                for (i = 0; i <= 6; i++) {
+                    if (arr2.includes(rd) == true) {
+                        continue;
+                    } else {
+                        arr2[k] = rd;
+                        k++;
+                    }
+                }
+
+            } while (k <= 6)
+            console.log(arr2);
+
+            two.textContent = '特別號' + arr2.pop();
+
+           before.textContent = '排序前號碼' + arr2;
+
+            arr2.sort((a, b) => {
+                return a - b;
+            })
+            after.textContent = '排序後號碼' + arr2;
+            
+            }
+
+            // 今彩539
+            function btn3Click() {
+
+            let arr3 = [];
+            var j = 0
+            do {
+                let rd = Math.floor(Math.random() * 39 + 1);
+                for (i = 0; i <= 4; i++) {
+                    if (arr3.includes(rd) == true) {
+                        continue;
+                    } else {
+                        arr3[j] = rd;
+                        j++;
+                    }
+                }
+
+            } while (j <= 4)
+
+            before.textContent = '排序前號碼' + arr3;
+
+            arr3.sort((a, b) => {
+                return a - b;
+            })
+            after.textContent = '排序後號碼' + arr3;
+            two.textContent='';
+            }
+    </script>
+</body>
+
+</html>
