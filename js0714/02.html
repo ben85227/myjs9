@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>函式</h1>
+    <hr>
+    <label for="name">請輸入姓名: </label>
+    <input type="text" id="name">
+    <button onclick="sayHi3(getname())">確定</button>
+    <p id="show"></p>
+
+    <script>
+        // 寫法一 無參數，無傳回值
+        function sayHi1(){
+            let name=document.getElementById('name').value;
+            let show=document.getElementById('show');
+            show.textContent=`hi,${name}`;
+        }
+
+        // 寫法二 有參數，無傳回值
+        function sayHi2(userName){
+            // 取得顯示段落
+            let show=document.getElementById('show')
+            // 顯示結果
+            show.textContent=`Hi,${userName}`;
+        }
+        // 取得姓名
+        function getname(){
+            // 取得文字方塊內容
+            let name1=document.getElementById('name').value;
+            return name1;
+        }
+
+        // 寫法三 有參數，又傳回值
+        function sayHi3(userName){
+            return userName;
+        }
+
+    </script>
+</body>
+</html>

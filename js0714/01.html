@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>函式</h1>
+    <hr>
+    請輸入姓名: <input type="text" id="name">
+    <button onclick="sayHi3()">確定</button>
+    <p id="show"></p>
+    <script>
+        // 建立函式
+        // 有參數，沒有傳回值
+        // function sum(a,b){
+        //     console.log(a+b);
+        // }
+        // 呼叫函式
+        // sum(5,3);
+        // sum(3,-1);
+
+        // 有參數，有傳回值
+        // function sum(a, b) {
+        //     // let c=a+b;
+        //     // return c;
+        //     return a + b;
+        // }
+        // console.log(sum(5, 3));
+        // let tot=sum(3, -1);
+        // document.write(tot);
+
+        // 無參數，無傳回值
+        // function sayHi() {
+        //     alert('Hi');
+        // }
+        // sayHi();
+
+        // 有參數，無傳回值
+        // function sayHi2(name){
+        //     alert('Hi,'+name);
+        // }
+        // let userName=prompt('請輸入姓名');
+        // sayHi2(userName);
+
+        // 無參數，無傳回值(for表單文字方塊)
+        function sayHi3() {
+            // 取得文字方塊位置
+            let name = document.getElementById("name");
+            // 取得顯示資料位置
+            let show = document.getElementById("show");
+            // 純文字
+            // show.textContent='Hi,'+name.value;
+            // 含有HTML標籤
+            // show.innerHTML='Hi,<br>'+name.value;
+            // 使用跳脫字元
+            show.innerText = 'Hi,\n' + name.value;
+        }
+
+
+    </script>
+</body>
+
+</html>
