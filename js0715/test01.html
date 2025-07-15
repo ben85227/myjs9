@@ -39,38 +39,48 @@
 
         function isUpperCase(b) {
             let n = b[0];
-            if (n === '') {
-                return false;
-            } else if (n === n.toUpperCase()) {
-                return true;
-            } else {
+            if (n.trim().length==0) {
                 return false;
             }
+            //  else if (n === n.toUpperCase()) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+            // 簡化
+            return n===n.toUpperCase();
         }
 
 
         // ex5 檢查所有字母是否為大寫
         function isAllUpperCase(c) {
-            if (c === '') {
-                return false;
-            } else if (c === c.toUpperCase()) {
-                return true;
-            } else {
+            if (c.trim().length==0) {
                 return false;
             }
+            //  else if (c === c.toUpperCase()) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+            // 簡化
+            return c===c.toUpperCase();
         }
+        console.log(isAllUpperCase('ABCDe'));
+        
 
         // ex6 檢查第一個字母大寫的內容與位置，找不到為-1
+        
         function position(d) {
             for (let i = 0; i < d.length; i++) {
                 if (d[i] === d[i].toUpperCase()) {
-                    return [d[i], i];
+                    return d[i]+' '+ i;
                 }
             }
             return -1;
 
         }
-        console.log(position("abcd"));
+        console.log(position("aBcd"));
+
         // ex7 找出陣列中的值，比第2個參數小的總個數
         function findSmallCount(arr1, e) {
             let z = 0;
@@ -82,6 +92,7 @@
             return z;
         }
         console.log(findSmallCount([1, 2, 3], 2));
+
         // ex8 找出陣列中的值，比第2個參數小的總合
         function findSmallerTotal(arr2, f) {
             let y = 0;
