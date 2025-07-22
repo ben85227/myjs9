@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let add=(n)=>{
+            return n*n*3.14;
+        }
+        console.log(add(6));
+
+
+        function T(t,b,h){
+            let area=(t+b)*h/2;
+            return `梯形面積1=${area}`;
+        }
+        console.log(T(10,20,10));
+
+        let T1=(t,b,h=10)=>{
+            let area=(t+b)*h/2;
+            return `梯形面積2=${area}`;
+        }
+        console.log(T1(10,20));
+
+        let T2=({t,b,h})=>{
+            let area=(t+b)*h/2;
+            return `梯形面積3=${area}`;
+        }
+        console.log(T2({h:10,t:20,b:60}));
+    </script>
+</body>
+</html>
