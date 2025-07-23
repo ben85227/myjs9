@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user=new Object()
+        user.name='ben';
+        user.age=29;
+        user.showMsg=function(){
+            console.log(`Hi,我是${this.name}!`);
+        }
+
+        user.showMsg();
+        console.log(user.age);
+
+        user.age=17;
+        console.log(user.age);
+
+        user.email='xxx@xxx.com';
+        console.log(user.email);
+
+        console.log(user);
+        delete user.age;
+        console.log(user);
+
+        user.age=20;
+        console.log(user);
+    </script>
+</body>
+</html>

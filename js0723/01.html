@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立物件
+        var user={
+            // 屬性成員
+            name:'ben',
+            age:29,
+            // 方法成員
+            showMsg:function(){
+                // 方法一
+                console.log(`Hi,我是${user.name}!`);
+                // 方法二
+                console.log(`Hi,我是${this.name}!`);
+            }
+        };
+        // 取得物件屬性=>物件名稱.物件屬性
+        // 使用成員運算子(.)
+        console.log(`使用者姓名:${user.name}`);
+        console.log(`使用者年齡:${user.age}歲`);
+        // 使用中誇號表示法取得物件屬性
+        // 物件名稱['屬性名稱'] 
+        console.log(`使用者姓名:${user['name']}`);
+        console.log(`使用者年齡:${user['age']}歲`);
+
+        // 取的物件方法=>物件名稱.方法名稱()
+        user.showMsg();
+
+        // 變更物件屬性
+        // 物件名稱.屬性名稱=屬性質
+        user.age=28;
+        console.log(user.age);
+        console.log(user['age']);
+
+        // delete 物件名稱.屬性名稱
+        delete user.age;
+        
+        // 刪除物件的屬性:刪除後再取得此屬性，會回傳undefined
+        console.log(user.age);
+    </script>
+</body>
+</html>

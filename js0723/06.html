@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <p id="counter">3</p>
+    <button id="btn">計時開始</button>
+    <button id="btn2" style="display: none;">重來</button>
+    <p id="changeColor">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea amet voluptates</p>
+
+
+    <script>
+        let counter = document.getElementById("counter");
+        let initalCounter = parseInt(counter.innerText);
+        let btn = document.getElementById("btn");
+        let btn2 = document.getElementById("btn2");
+
+
+        btn.addEventListener('click', function () {
+            showTime();
+        })
+
+
+        btn2.addEventListener('click', function () {
+            counter.innerText = "3";
+            showTime();
+        })
+
+
+        function showTime() {
+            let interval;
+            let curCounter = initalCounter;
+
+
+            interval = setInterval(() => {
+                if (curCounter <= 0) {
+                    counter.innerText = "時間到!";
+                    btn.style.display = "none";     //隱藏
+                    btn2.style.display = "block";   //顯示
+                    return clearInterval(interval);
+                }
+                // curCounter -= 1;
+                curCounter = curCounter - 1;
+                counter.innerText = curCounter;
+            }, 1000)
+        }
+    </script>
+</body>
+</html>

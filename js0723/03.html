@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立一個名稱為User函式為物件的樣板，內有name,age兩個屬性，showMag()方法
+        // 字首大寫
+        function User(myName,myAge,myH,myW){
+            this.name=myName;
+            this.age=myAge;
+            this.h=myH;
+            this.w=myW;
+
+            this.showBMI=function(){
+                let bmi=(myW/Math.pow(myH/100,2)).toFixed(2);
+                console.log(bmi);
+            }
+        }
+
+        // 使用物件樣板，必須使用new關鍵字
+        let user1=new User('Yu',28,180,106);
+        console.log(user1);
+        user1.showBMI();
+        let user2=new User('chen',30,181,85);
+        console.log(user2);
+    </script>
+</body>
+</html>
