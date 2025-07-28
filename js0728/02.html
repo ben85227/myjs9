@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/falcon-9697872_1280.webp" alt="" id="pic"> 
+    <script>
+        let pic=document.querySelector('#pic');
+        pic.addEventListener('mouseover',()=>{
+            pic.src='./images/lion-9699734_1280.webp'
+        });
+        pic.addEventListener('mouseout',()=>{
+            pic.src='./images/falcon-9697872_1280.webp'
+        });
+    </script>
+
+</body>
+</html>
